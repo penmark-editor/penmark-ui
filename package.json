@@ -4,7 +4,10 @@
   "description": "A React WYSIWYG editor component",
   "main": "dist/index.js",
   "scripts": {
-    "prepublishOnly": "babel ./src --out-dir ./dist --extensions \".ts,.tsx\" -s inline",
+    "prepublishOnly": "npm run build:types && npm run build:js",
+    "build": "npm run build:types && npm run build:js",
+    "build:types": "tsc --declaration --emitDeclarationOnly",
+    "build:js": "babel ./src --out-dir ./dist --extensions \".ts,.tsx\" --source-maps inline",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
