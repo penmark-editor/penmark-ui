@@ -1,1 +1,1 @@
-export { HelloWorld } from "components/Hello";
+export { Editor as PenMark } from './components/Editor';
