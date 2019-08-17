@@ -1,0 +1,45 @@
+{
+  "name": "penmark",
+  "version": "0.1.0",
+  "description": "A React WYSIWYG editor component",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepublishOnly": "babel ./src --out-dir ./dist --extensions \".ts,.tsx\" -s inline",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shobokshy/penmark.git"
+  },
+  "keywords": [
+    "React",
+    "ProseMirror",
+    "WYSIWYG",
+    "Editor"
+  ],
+  "files": [
+    "dist/*"
+  ],
+  "author": "shobokshy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shobokshy/penmark/issues"
+  },
+  "homepage": "https://github.com/shobokshy/penmark#readme",
+  "peerDependencies": {
+    "react": "^16.8.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-numeric-separator": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/react": "^16.9.2",
+    "react": "^16.9.0",
+    "typescript": "^3.5.3"
+  }
+}
