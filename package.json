@@ -4,10 +4,11 @@
   "description": "A React WYSIWYG editor component",
   "main": "dist/index.js",
   "scripts": {
-    "prepublishOnly": "npm run build:types && npm run build:js",
+    "start": "nodemon --watch ./src -e ts,tsx,css --exec npm run build",
+    "prepublishOnly": "npm run build",
     "build": "npm run build:types && npm run build:js",
     "build:types": "tsc --declaration --emitDeclarationOnly",
-    "build:js": "babel ./src --out-dir ./dist --extensions \".ts,.tsx\" --source-maps inline",
+    "build:js": "babel ./src --out-dir ./dist --extensions \".ts,.tsx\" --source-maps inline --copy-files",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -56,11 +57,14 @@
     "@types/prosemirror-transform": "^1.1.0",
     "@types/prosemirror-view": "^1.9.0",
     "@types/react": "^16.9.2",
+    "babel-plugin-import": "^1.12.0",
     "prosemirror-history": "^1.0.4",
     "react": "^16.9.0",
     "typescript": "^3.5.3"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.16",
+    "antd": "^3.21.4",
     "prosemirror-commands": "^1.0.8",
     "prosemirror-dropcursor": "^1.1.1",
     "prosemirror-gapcursor": "^1.0.4",
@@ -74,6 +78,6 @@
     "prosemirror-transform": "^1.1.3",
     "prosemirror-utils": "^0.9.6",
     "prosemirror-view": "^1.10.0",
-    "rpm-editor": "^1.0.4"
+    "rpm-editor": "^2.0.0-alpha.2"
   }
 }

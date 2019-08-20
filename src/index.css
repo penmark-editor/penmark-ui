@@ -1,0 +1,15 @@
+.borderless-select > .ant-select-selection {
+    box-shadow: none;
+    border-color: unset;
+    border: none;
+}
+
+.borderless-select > .ant-select-selection:hover {
+    background-color: #f5f5f5
+}
+
+.ant-divider, .ant-divider-vertical {
+    top: unset !important;
+    height: 16px !important;
+    margin: auto 8px !important;
+}
