@@ -64,20 +64,20 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.16",
-    "antd": "^3.21.4",
+    "antd": "^3.23.3",
     "prosemirror-commands": "^1.0.8",
-    "prosemirror-dropcursor": "^1.1.1",
+    "prosemirror-dropcursor": "^1.1.2",
     "prosemirror-gapcursor": "^1.0.4",
     "prosemirror-inputrules": "^1.0.4",
     "prosemirror-keymap": "^1.0.1",
-    "prosemirror-model": "^1.7.1",
+    "prosemirror-model": "^1.7.2",
     "prosemirror-schema-basic": "^1.0.1",
     "prosemirror-schema-list": "^1.0.3",
     "prosemirror-state": "^1.2.4",
     "prosemirror-tables": "^0.9.1",
     "prosemirror-transform": "^1.1.3",
     "prosemirror-utils": "^0.9.6",
-    "prosemirror-view": "^1.10.0",
-    "rpm-editor": "^2.0.0-alpha.2"
+    "prosemirror-view": "^1.11.3",
+    "rpm-editor": "^2.0.0-alpha.5"
   }
 }
