@@ -2,10 +2,14 @@
 import { jsx } from '@emotion/core';
 
 import * as React from 'react';
-import { Button } from "antd";
+import { Button, Tooltip, Tag } from "antd";
+import Shortcut from 'rpm-editor/lib/actions/Shortcut';
+import { ShortcutTag } from './ShortcutTag';
 
 interface ToolbarButtonProps {
     children?: React.ReactChildren,
+    name?: string,
+    shortcut?: Shortcut,
     icon?: string,
     disabled?: boolean,
     active?: boolean,
@@ -15,21 +19,34 @@ interface ToolbarButtonProps {
 
 export const ToolbarButton: React.SFC<ToolbarButtonProps> = (props) => {
     return (
-        <Button
-            css={{
-                backgroundColor: props.active ? '#1890ff' : 'inherit',
-                color: props.active ? '#fff' : 'inherit',
-                '&:hover': {
-                    backgroundColor: '#f5f5f5'
-                }
-            }}
-            icon={props.icon} 
-            disabled={props.disabled}
-            type="link"
-            onClick={props.onClick}
-            {...props}
+        <Tooltip
+            title={
+                <React.Fragment>
+                    <span>{props.name}</span>
+                    {props.shortcut &&
+                        <ShortcutTag shortcut={props.shortcut} inverted />
+                    }
+                </React.Fragment>
+            }
+            placement='top'
         >
-            {props.children}
-        </Button>
+            <Button
+                css={{
+                    backgroundColor: props.active ? '#1890ff' : 'inherit',
+                    color: props.active ? '#fff' : 'inherit',
+                    '&:hover': {
+                        backgroundColor: '#f5f5f5'
+                    }
+                }}
+                icon={props.icon}
+                disabled={props.disabled}
+                type="link"
+                onClick={props.onClick}
+                {...props}
+            >
+                {props.children}
+            </Button>
+        </Tooltip>
+
     )
 }

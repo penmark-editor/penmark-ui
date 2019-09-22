@@ -2,64 +2,49 @@
 import { jsx } from '@emotion/core';
 
 import * as React from 'react';
-import {withEditorContext, IEditorProps } from 'rpm-editor';
-import { ToolbarItem, ToolbarItemType } from './ToolbarItem';
+import {withEditorContext, EditorContext } from 'rpm-editor';
 import { Divider } from 'antd';
+import { GetActionProps } from '../../helpers/GetActionProps';
+import { ToolbarButton } from './ToolbarButton';
+import { HeadingsSelector } from './HeadingsSelector';
 
-interface ToolbarProps extends IEditorProps {
+interface ToolbarProps extends EditorContext {
 
 }
 
-const Toolbar: React.SFC<ToolbarProps> = (props) => {
+const Toolbar: React.FC<ToolbarProps> = (props) => {
     return (
         <div
             css={{
-                display: 'flex',
-                gridColumn: 'span 3',
+                display: 'flex'
             }}
         >
-            <ToolbarItem
-                type={ToolbarItemType.Select}
-                action={props.editorContext.actions.bold} 
-                name='Text Styles'
-            />
+            <HeadingsSelector name="Text Styles" />
             <Divider type='vertical' />
-            <ToolbarItem
-                type={ToolbarItemType.Button}
-                action={props.editorContext.actions.bold} 
-                name='Bold'
+            <ToolbarButton 
+                {...GetActionProps(props.actions.bold)}
                 icon='bold'
             />
-            <ToolbarItem
-                type={ToolbarItemType.Button}
-                action={props.editorContext.actions.italic} 
-                name='Italic'
+            <ToolbarButton 
+                {...GetActionProps(props.actions.italic)}
                 icon='italic'
             />
             <Divider type='vertical' />
-            <ToolbarItem
-                type={ToolbarItemType.Button}
-                action={props.editorContext.actions.bulletList} 
-                name='Bullet List'
+            <ToolbarButton 
+                {...GetActionProps(props.actions.bulletList)}
                 icon='unordered-list'
             />
-            <ToolbarItem
-                type={ToolbarItemType.Button}
-                action={props.editorContext.actions.orderedList} 
-                name='Numbered List'
+            <ToolbarButton 
+                {...GetActionProps(props.actions.orderedList)}
                 icon='ordered-list'
             />
             <Divider type='vertical' />
-            <ToolbarItem
-                type={ToolbarItemType.Button}
-                action={props.editorContext.actions.undo} 
-                name='Undo'
+            <ToolbarButton 
+                {...GetActionProps(props.actions.undo)}
                 icon='undo'
             />
-            <ToolbarItem
-                type={ToolbarItemType.Button}
-                action={props.editorContext.actions.redo} 
-                name='Redo'
+            <ToolbarButton 
+                {...GetActionProps(props.actions.redo)}
                 icon='redo'
             />
         </div>

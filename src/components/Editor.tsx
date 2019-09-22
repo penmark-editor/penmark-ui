@@ -4,24 +4,24 @@ import { jsx } from '@emotion/core';
 import * as React from 'react';
 import {Editor as RPM, View} from 'rpm-editor';
 import Toolbar from './UI/Toolbar';
+import { HtmlAttributes } from 'csstype';
+import { actions } from './Actions';
+import { schema } from './schema/Index';
 
-export const Editor: React.SFC = () => {
+interface EditorProps {
+    style?: HtmlAttributes;
+}
+
+export const Editor: React.FC = () => {
     return (
         <RPM
+            id='1'
+            actions={actions}
+            schema={schema}
             editable={true}
         >
-            <div
-                css={{
-                    display: 'grid',
-                    gridTemplateColumns: '1fr auto 1fr',
-                    maxWidth: '70vw',
-                    margin: '0 auto',
-                    paddingTop: '60px'
-                }} 
-            >
-                <Toolbar />
-                <View css={{maxWidth: '50vw'}}/>
-            </div>
+                <Toolbar/>
+                <View/>
         </RPM>
     )
 }
