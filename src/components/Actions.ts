@@ -24,6 +24,32 @@ export const actions: Actions = {
             new Shortcut({key: 'Mod-i'})
         ]
     }),
+    underline: new Action({
+        command: () => toggleMark(schema.marks.underline),
+        type: schema.marks.underline,
+        shortcuts: [
+            new Shortcut({ key: 'Mod-u' })
+        ],
+        name: 'Underline'
+    }),
+    strikethrough: new Action({
+        command: () => toggleMark(schema.marks.strikethrough),
+        type: schema.marks.strikethrough,
+        shortcuts: [
+            new Shortcut({ key: 'Mod-Shift-s' })
+        ],
+        name: 'Strikethrough'
+    }),
+    subscript: new Action({
+        command: () => toggleMark(schema.marks.subscript),
+        type: schema.marks.subscript,
+        name: 'Subscript'
+    }),
+    superscript: new Action({
+        command: () => toggleMark(schema.marks.superscript),
+        type: schema.marks.superscript,
+        name: 'Superscript'
+    }),
     code: new Action({
         command: () => toggleMark(schema.marks.code),
         type: schema.marks.code,

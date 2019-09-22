@@ -69,14 +69,14 @@ const HeadingsSelectorComponent: React.SFC<HeadingsSelectorProps> = (props) => {
                 }}
             >
                 <Select.OptGroup label="Paragraph">
-                    <Select.Option value={0} style={optionStyling}>
+                    <Select.Option key={0} value={0} style={optionStyling}>
                         <Heading level={0}>{headingAction.getShortcuts[0].name}</Heading>
                         <ShortcutTag shortcut={headingAction.getShortcuts[0]} />
                     </Select.Option>
                 </Select.OptGroup>
                 <Select.OptGroup label="Headings">
                     {headingAction.getShortcuts.filter(s => s.attrs.level > 0).map(shortcut =>
-                        <Select.Option value={shortcut.attrs.level} style={optionStyling}>
+                        <Select.Option key={shortcut.attrs.level} value={shortcut.attrs.level} style={optionStyling}>
                             <Heading level={shortcut.attrs.level}>{shortcut.name}</Heading>
                             <ShortcutTag shortcut={shortcut} />
                         </Select.Option>

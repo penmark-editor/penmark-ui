@@ -7,6 +7,7 @@ import { Divider } from 'antd';
 import { GetActionProps } from '../../helpers/GetActionProps';
 import { ToolbarButton } from './ToolbarButton';
 import { HeadingsSelector } from './HeadingsSelector';
+import { ToolbarDropdown } from './ToolbarDropdown';
 
 interface ToolbarProps extends EditorContext {
 
@@ -28,6 +29,16 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
             <ToolbarButton 
                 {...GetActionProps(props.actions.italic)}
                 icon='italic'
+            />
+            <ToolbarDropdown 
+                name='More Formatting' 
+                icon='ellipsis' 
+                actions={[
+                    props.actions.underline,
+                    props.actions.strikethrough,
+                    props.actions.subscript,
+                    props.actions.superscript
+                ]}
             />
             <Divider type='vertical' />
             <ToolbarButton 
