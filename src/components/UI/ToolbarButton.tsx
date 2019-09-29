@@ -32,6 +32,7 @@ export const ToolbarButton: React.SFC<ToolbarButtonProps> = (props) => {
         >
             <Button
                 css={{
+                    marginRight: 4,
                     backgroundColor: props.active ? '#1890ff' : 'inherit',
                     color: props.active ? '#fff' : 'inherit',
                     '&:hover': {

@@ -11,7 +11,7 @@ const listNodes: {
     } = {
     ordered_list: {
         ...orderedList,
-        //content: 'list_item+',
+        content: 'list_item+',
         group: 'block'
     },
     bullet_list: {

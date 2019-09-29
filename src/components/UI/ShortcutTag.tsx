@@ -4,7 +4,6 @@ import { jsx, InterpolationWithTheme } from '@emotion/core';
 import * as React from 'react';
 import { Tag } from 'antd';
 import Shortcut from 'rpm-editor/lib/actions/Shortcut';
-import { CSSInterpolation } from '@emotion/serialize';
 
 interface ShortcutTagProps {
     shortcut: Shortcut | string,

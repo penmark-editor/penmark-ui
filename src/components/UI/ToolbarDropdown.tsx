@@ -2,8 +2,7 @@
 import { jsx } from '@emotion/core';
 
 import * as React from 'react';
-import { Button, Tooltip, Tag, Menu, Dropdown } from "antd";
-import Shortcut from 'rpm-editor/lib/actions/Shortcut';
+import { Menu, Dropdown } from "antd";
 import { ShortcutTag } from './ShortcutTag';
 import { Action } from 'rpm-editor';
 import { ToolbarButton } from './ToolbarButton';
@@ -14,7 +13,6 @@ interface ToolbarDropdownProps {
     icon?: string,
     actions: Action[]
 }
-
 
 export const ToolbarDropdown: React.FC<ToolbarDropdownProps> = (props) => {
 
@@ -48,7 +46,6 @@ export const ToolbarDropdown: React.FC<ToolbarDropdownProps> = (props) => {
             )}
         </Menu>
     )
-
 
     return (
         <Dropdown overlay={menu} trigger={['click']}>

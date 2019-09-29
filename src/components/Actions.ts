@@ -84,12 +84,18 @@ export const actions: Actions = {
     bulletList: new Action({
         command: () => wrapInList(schema.nodes.bullet_list),
         type: schema.nodes.bullet_list,
-        name: 'Bullet List'
+        name: 'Bullet List',
+        shortcuts: [
+            new Shortcut({key: 'Shift-Mod-8'})
+        ]
     }),
     orderedList: new Action({
         command: () => wrapInList(schema.nodes.ordered_list),
         type: schema.nodes.ordered_list,
-        name: 'Numbered List'
+        name: 'Numbered List',
+        shortcuts: [
+            new Shortcut({key: 'Shift-Mod-7'})
+        ]
     }),
     blockquote: new Action({
         command: () => setBlockType(schema.nodes.blockquote),
